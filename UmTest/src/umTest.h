@@ -58,21 +58,6 @@ namespace driver {
         return true;
     }
 
-    //MEMORY_BASIC_INFORMATION VQE(HANDLE driver_handle, const UINT64 address) {
-    //    info_t io_info{};
-    //    MEMORY_BASIC_INFORMATION mem_info{};
-
-    //    io_info.target_address = address;
-    //    io_info.buffer_address = reinterpret_cast<UINT64>(&mem_info);
-    //    io_info.size = sizeof(MEMORY_BASIC_INFORMATION);
-
-    //    if (!DeviceIoControl(driver_handle, codes::query_code, &io_info, sizeof(io_info), &io_info, sizeof(io_info), nullptr, nullptr)) {
-    //        DWORD error = GetLastError();
-    //        std::cout << "VQE failed. Error code: " << error << std::endl;
-    //    }
-    //    return mem_info;
-    //}
-
     bool VQE(HANDLE driver_handle, const UINT64 address, PMEMORY_BASIC_INFORMATION mbi, SIZE_T dwLength) {
         info_t io_info{};
 
